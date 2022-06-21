@@ -6,16 +6,11 @@
 /*   By: mliew < mliew@student.42kl.edu.my>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 17:05:34 by mliew             #+#    #+#             */
-/*   Updated: 2022/06/20 23:04:00 by mliew            ###   ########.fr       */
+/*   Updated: 2022/06/21 23:07:07 by mliew            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-static void	ft_putpercent(void)
-{
-	write(1, "%", 1);
-}
 
 static void	printf_format(va_list ptr, const char fmt)
 {
@@ -24,11 +19,11 @@ static void	printf_format(va_list ptr, const char fmt)
 	else if (fmt == 's')
 		ft_putstr(va_arg(ptr, char *));
 	else if (fmt == 'p')
-		ft_putaddress(va_arg(ptr, unsigned long long));
+		ft_putpointer(va_arg(ptr, unsigned long));
 	else if (fmt == 'd' || fmt == 'i')
 		ft_putnbr(va_arg(ptr, int));
 	else if (fmt == 'u')
-		ft_putunbr(va_arg(ptr, unsigned int));
+		ft_putunsign(va_arg(ptr, unsigned int));
 	else if (fmt == 'x' || fmt == 'X')
 		ft_puthex(va_arg(ptr, unsigned int));
 	else if (fmt == '%')
@@ -39,6 +34,7 @@ int	ft_printf(const char *str, ...)
 {
 	int		i;
 	va_list	ptr;
+	int res;
 
 	va_start(ptr, str);
 	while (str[i])
@@ -53,4 +49,5 @@ int	ft_printf(const char *str, ...)
 		i++;
 	}
 	va_end(ptr);
+	return (res);
 }
