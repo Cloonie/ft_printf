@@ -6,13 +6,13 @@
 /*   By: mliew < mliew@student.42kl.edu.my>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 17:29:20 by mliew             #+#    #+#             */
-/*   Updated: 2022/06/22 17:30:28 by mliew            ###   ########.fr       */
+/*   Updated: 2022/06/22 21:53:05 by mliew            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putstr(char *str)
+int	ft_putstr(char *str)
 {
 	int	i;
 
@@ -22,4 +22,5 @@ void	ft_putstr(char *str)
 		ft_putchar(str[i]);
 		i++;
 	}
+	return (i);
 }

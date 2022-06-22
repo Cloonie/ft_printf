@@ -6,7 +6,7 @@
 /*   By: mliew < mliew@student.42kl.edu.my>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 10:56:28 by mliew             #+#    #+#             */
-/*   Updated: 2022/06/21 23:00:29 by mliew            ###   ########.fr       */
+/*   Updated: 2022/06/22 22:28:35 by mliew            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,11 @@ void	ft_putaddress(unsigned long n)
 	}
 }
 
-void	ft_putpointer(unsigned long n)
+int	ft_putpointer(unsigned long n)
 {
 	ft_putstr("0x");
 	ft_putaddress(n);
+	return (11);
 }
 
 // int	main(void)

@@ -6,13 +6,14 @@
 /*   By: mliew < mliew@student.42kl.edu.my>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 17:28:18 by mliew             #+#    #+#             */
-/*   Updated: 2022/06/22 17:29:11 by mliew            ###   ########.fr       */
+/*   Updated: 2022/06/22 18:35:18 by mliew            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putchar(char c)
+int	ft_putchar(char c)
 {
 	write (1, &c, 1);
+	return (1);
 }
