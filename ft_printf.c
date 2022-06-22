@@ -6,11 +6,16 @@
 /*   By: mliew < mliew@student.42kl.edu.my>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 17:05:34 by mliew             #+#    #+#             */
-/*   Updated: 2022/06/21 23:07:07 by mliew            ###   ########.fr       */
+/*   Updated: 2022/06/22 15:24:02 by mliew            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+void	ft_putpercent(void)
+{
+	write(1, "%", 1);
+}
 
 static void	printf_format(va_list ptr, const char fmt)
 {
@@ -32,10 +37,12 @@ static void	printf_format(va_list ptr, const char fmt)
 
 int	ft_printf(const char *str, ...)
 {
-	int		i;
 	va_list	ptr;
-	int res;
+	int		i;
+	int		res;
 
+	i = 0;
+	res = 0;
 	va_start(ptr, str);
 	while (str[i])
 	{
