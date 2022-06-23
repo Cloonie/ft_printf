@@ -1,6 +1,7 @@
 # Tester files
 test.c
 tester
+main.c
 
 # System files
 .DS_Store

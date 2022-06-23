@@ -6,31 +6,23 @@
 /*   By: mliew < mliew@student.42kl.edu.my>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 22:14:18 by mliew             #+#    #+#             */
-/*   Updated: 2022/06/22 22:26:39 by mliew            ###   ########.fr       */
+/*   Updated: 2022/06/23 19:07:36 by mliew            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
-static int	ft_numlen(long n)
+static int	len_num(long n)
 {
-	int	ft_numlen;
+	int	len;
 
-	ft_numlen = 0;
-	if (n == '\0')
-		return (1);
-	if (n < 0)
+	len = 0;
+	while (n)
 	{
-		n *= -1;
-		ft_numlen++;
-	}
-	while (n > 0)
-	{
+		len++;
 		n /= 10;
-		ft_numlen++;
 	}
-	return (ft_numlen);
+	return (len);
 }
 
 int	ft_putunsign(unsigned int n)
@@ -40,7 +32,7 @@ int	ft_putunsign(unsigned int n)
 	if (n > 9)
 		ft_putunsign(n / 10);
 	ft_putchar(n % 10 + '0');
-	return (ft_numlen(n));
+	return (len_num(n));
 }
 
 // int	main(void)

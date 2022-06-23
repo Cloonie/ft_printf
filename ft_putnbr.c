@@ -6,12 +6,11 @@
 /*   By: mliew < mliew@student.42kl.edu.my>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 17:09:51 by mliew             #+#    #+#             */
-/*   Updated: 2022/06/22 22:23:19 by mliew            ###   ########.fr       */
+/*   Updated: 2022/06/23 19:07:37 by mliew            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
 static int	ft_numlen(long n)
 {

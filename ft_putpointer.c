@@ -6,12 +6,11 @@
 /*   By: mliew < mliew@student.42kl.edu.my>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 10:56:28 by mliew             #+#    #+#             */
-/*   Updated: 2022/06/22 22:28:35 by mliew            ###   ########.fr       */
+/*   Updated: 2022/06/23 19:07:37 by mliew            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
 void	ft_putaddress(unsigned long n)
 {
@@ -33,7 +32,7 @@ int	ft_putpointer(unsigned long n)
 {
 	ft_putstr("0x");
 	ft_putaddress(n);
-	return (11);
+	return (14);
 }
 
 // int	main(void)
