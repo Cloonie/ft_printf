@@ -3,33 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mliew < mliew@student.42kl.edu.my>         +#+  +:+       +#+        */
+/*   By: mliew <mliew@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 17:09:51 by mliew             #+#    #+#             */
-/*   Updated: 2022/06/23 19:07:37 by mliew            ###   ########.fr       */
+/*   Updated: 2022/06/24 14:34:53 by mliew            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_numlen(long n)
+int	len_num(int n)
 {
-	int	ft_numlen;
+	int	len_num;
 
-	ft_numlen = 0;
-	if (n == '\0')
-		return (1);
+	len_num = 0;
+	if (n == 0)
+	{
+		len_num++;
+	}
 	if (n < 0)
 	{
-		n *= -1;
-		ft_numlen++;
+		len_num++;
 	}
 	while (n > 0)
 	{
 		n /= 10;
-		ft_numlen++;
+		len_num++;
 	}
-	return (ft_numlen);
+	return (len_num);
 }
 
 int	ft_putnbr(int n)
@@ -51,5 +52,5 @@ int	ft_putnbr(int n)
 		}
 		ft_putchar(n % 10 + '0');
 	}
-	return (ft_numlen(n));
+	return (len_num(n));
 }

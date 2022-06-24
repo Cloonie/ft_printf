@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mliew < mliew@student.42kl.edu.my>         +#+  +:+       +#+         #
+#    By: mliew <mliew@student.42kl.edu.my>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/08 17:35:32 by mliew             #+#    #+#              #
-#    Updated: 2022/06/22 18:15:03 by mliew            ###   ########.fr        #
+#    Updated: 2022/06/24 13:42:28 by mliew            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ AR		= ar rcs
 RM		= rm -f
 LIBFT	= libft
 
-all: $(LIBFT) $(NAME)
+all: $(NAME)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
