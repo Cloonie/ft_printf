@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putpointer.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mliew <mliew@student.42kl.edu.my>          +#+  +:+       +#+        */
+/*   By: mliew < mliew@student.42kl.edu.my>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 10:56:28 by mliew             #+#    #+#             */
-/*   Updated: 2022/06/24 14:20:50 by mliew            ###   ########.fr       */
+/*   Updated: 2022/06/24 19:32:15 by mliew            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,11 @@ void	ft_putaddress(unsigned long n)
 	}
 }
 
-int	ft_putpointer(unsigned long long n)
+int	ft_putpointer(unsigned long n)
 {
 	ft_putstr("0x");
 	ft_putaddress(n);
-	return (15);
+	return (len_hex(n) + 2);
 }
 
 // int	main(void)

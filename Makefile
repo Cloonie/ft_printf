@@ -3,15 +3,15 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mliew <mliew@student.42kl.edu.my>          +#+  +:+       +#+         #
+#    By: mliew < mliew@student.42kl.edu.my>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/08 17:35:32 by mliew             #+#    #+#              #
-#    Updated: 2022/06/24 13:42:28 by mliew            ###   ########.fr        #
+#    Updated: 2022/06/24 19:32:40 by mliew            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= libftprintf.a
-SRC		= printf putchar putstr putnbr puthex putpointer putunsign
+SRC		= printf putchar putstr putnbr puthex putpointer putunsign len_hex
 SRCS	= $(addprefix ft_, $(addsuffix .c, $(SRC)))
 OBJS	= $(SRCS:.c=.o)
 CC		= gcc

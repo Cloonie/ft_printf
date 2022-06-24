@@ -1,6 +1,5 @@
 # Tester files
-test.c
-tester
+test*
 main.c
 
 # System files

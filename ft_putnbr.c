@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mliew <mliew@student.42kl.edu.my>          +#+  +:+       +#+        */
+/*   By: mliew < mliew@student.42kl.edu.my>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 17:09:51 by mliew             #+#    #+#             */
-/*   Updated: 2022/06/24 14:34:53 by mliew            ###   ########.fr       */
+/*   Updated: 2022/06/24 19:26:15 by mliew            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,30 +14,33 @@
 
 int	len_num(int n)
 {
-	int	len_num;
+	int	len;
 
-	len_num = 0;
+	len = 0;
 	if (n == 0)
-	{
-		len_num++;
-	}
+		len++;
 	if (n < 0)
 	{
-		len_num++;
+		n *= -1;
+		len++;
 	}
 	while (n > 0)
 	{
 		n /= 10;
-		len_num++;
+		len++;
 	}
-	return (len_num);
+	return (len);
 }
 
 int	ft_putnbr(int n)
 {
+	int	num;
+
+	num = n;
 	if (n == -2147483648)
 	{
 		ft_putstr("-2147483648");
+		return (11);
 	}
 	else
 	{
@@ -47,10 +50,8 @@ int	ft_putnbr(int n)
 			n = -n;
 		}
 		if (n > 9)
-		{
 			ft_putnbr(n / 10);
-		}
 		ft_putchar(n % 10 + '0');
 	}
-	return (len_num(n));
+	return (len_num(num));
 }

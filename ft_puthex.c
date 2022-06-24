@@ -6,24 +6,11 @@
 /*   By: mliew < mliew@student.42kl.edu.my>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 11:28:56 by mliew             #+#    #+#             */
-/*   Updated: 2022/06/23 19:07:38 by mliew            ###   ########.fr       */
+/*   Updated: 2022/06/24 19:39:19 by mliew            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-int	len_hex(unsigned int n)
-{
-	int	len;
-
-	len = 0;
-	while (n)
-	{
-		len++;
-		n /= 16;
-	}
-	return (len);
-}
 
 int	ft_puthex(unsigned int n, const char fmt)
 {

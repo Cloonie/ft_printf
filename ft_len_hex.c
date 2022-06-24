@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   len_hex.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mliew < mliew@student.42kl.edu.my>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/22 17:29:20 by mliew             #+#    #+#             */
-/*   Updated: 2022/06/24 15:52:15 by mliew            ###   ########.fr       */
+/*   Created: 2022/06/24 19:29:53 by mliew             #+#    #+#             */
+/*   Updated: 2022/06/24 19:30:34 by mliew            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putstr(char *str)
+int	len_hex(unsigned long n)
 {
-	int	i;
+	int	len;
 
-	i = 0;
-	if (!str)
+	len = 0;
+	if (n == 0)
+		len++;
+	if (n < 0)
 	{
-		ft_putstr("(null)");
-		return (6);
+		n *= -1;
+		len++;
 	}
-	while (str[i])
+	while (n)
 	{
-		ft_putchar(str[i]);
-		i++;
+		len++;
+		n /= 16;
 	}
-	return (i);
+	return (len);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putunsign.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mliew <mliew@student.42kl.edu.my>          +#+  +:+       +#+        */
+/*   By: mliew < mliew@student.42kl.edu.my>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 22:14:18 by mliew             #+#    #+#             */
-/*   Updated: 2022/06/24 13:43:36 by mliew            ###   ########.fr       */
+/*   Updated: 2022/06/24 18:23:05 by mliew            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,15 @@ static int	len_num(long n)
 
 int	ft_putunsign(unsigned int n)
 {
+	int	zero;
+
+	zero = 0;
+	if (n == 0)
+		zero = 1;
 	if (n > 9)
 		ft_putunsign(n / 10);
-	else
-		n = 4294967296 - n;
 	ft_putchar(n % 10 + '0');
-	return (len_num(n));
+	return (len_num(n) + zero);
 }
 
 // int	main(void)
